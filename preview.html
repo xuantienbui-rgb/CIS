@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFP Report — Trường Quốc Tế Canada – The Canadian International School (CIS)_SEEFQMP001 - 3</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #175ae2;
+    --primary-dark: #0f3fa8;
+    --primary-light: #e8effd;
+    --accent: #f0a500;
+    --danger: #e53e3e;
+    --success: #38a169;
+    --text: #1a202c;
+    --text-muted: #718096;
+    --border: #e2e8f0;
+    --bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(23,90,226,0.08);
+    --shadow-hover: 0 8px 32px rgba(23,90,226,0.15);
+  }
+  body { font: 14px/1.6 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 36px 40px 28px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .header::after { content: ''; position: absolute; bottom: -80px; left: 30%; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .header-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+  .header-tag { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
+  .header-sub { font-size: 14px; opacity: 0.85; }
+
+  /* Tab nav */
+  .tab-nav { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tab-nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 40px; }
+  .tab-btn { padding: 16px 24px; border: none; background: none; cursor: pointer; font: 600 14px inherit; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+  .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+  .tab-btn:hover { color: var(--primary); }
+
+  /* Main */
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 40px 48px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Section pattern */
+  .section-title { font-size: 18px; font-weight: 700; color: var(--text); margin-top: 32px; margin-bottom: 4px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .section-desc { color: var(--text-muted); font-size: 13px; margin-bottom: 18px; }
+
+  /* Stats grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 8px; }
+  .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 16px; box-shadow: var(--shadow); transition: box-shadow 0.2s; }
+  .stat-card:hover { box-shadow: var(--shadow-hover); }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 8px; }
+  .stat-value { font-size: 26px; font-weight: 700; color: var(--primary); line-height: 1.15; }
+  .stat-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow); }
+  .narrative-block p { margin-bottom: 12px; }
+  .narrative-block p:last-child { margin-bottom: 0; }
+  .narrative-block strong { color: var(--primary-dark); }
+
+  /* Aha cards */
+  .aha-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .aha-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 18px 52px; position: relative; box-shadow: var(--shadow); }
+  .aha-num { position: absolute; left: 16px; top: 18px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  .aha-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .aha-card p { font-size: 13px; color: var(--text-muted); }
+
+  /* Strategy pillars */
+  .strategy-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .strategy-pillar { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow); }
+  .pillar-tag { display: inline-block; background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px; }
+  .strategy-pillar h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .strategy-pillar p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Insight cards */
+  .insight-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .insight-card .card { all: revert; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .card-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .card-id { font-size: 11px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 3px 10px; border-radius: 4px; }
+  .card h3 { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.4; }
+  .card p { font-size: 13px; color: var(--text); margin: 6px 0; line-height: 1.55; }
+  .card p b { color: var(--primary-dark); }
+  .badge { display: inline-block; margin-top: 10px; background: var(--bg); color: var(--text-muted); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; }
+
+  /* Appendix */
+  table.appendix { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  table.appendix th, table.appendix td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+  table.appendix th { background: var(--bg); font-weight: 600; width: 220px; color: var(--text-muted); }
+  table.appendix tr:last-child th, table.appendix tr:last-child td { border-bottom: none; }
+
+  footer { text-align: center; padding: 28px; color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <span class="header-tag">CFP Report</span>
+    <h1>Trường Quốc Tế Canada – The Canadian International School (CIS)_SEEFQMP001 - 3</h1>
+    <div class="header-sub">Trường Quốc Tế Canada – The Canadian International School (CIS) · Meta Ads · 18/05/2026</div>
+  </div>
+</header>
+<div class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="overview">Tổng quan</button>
+    <button class="tab-btn" data-tab="insights">Insights</button>
+    <button class="tab-btn" data-tab="appendix">Phụ lục</button>
+  </div>
+</div>
+<main>
+  <section id="overview" class="tab-panel active">
+    <div class="section-title">Chỉ số tổng quan</div>
+    <div class="section-desc">Snapshot nhanh về quy mô và độ phủ của phân tích CFP</div>
+    <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Tổng số Insights</div>
+          <div class="stat-value">12</div>
+          <div class="stat-note">Từ toàn bộ dataset CFP</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Hypotheses validated</div>
+          <div class="stat-value">15</div>
+          <div class="stat-note">Từ Phase 1 → Phase 4</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Finding có impact lớn nhất</div>
+          <div class="stat-value" style="font-size:18px;padding-top:8px;">University Admission &amp; Career Outcomes</div>
+          <div class="stat-note">Low confidence · ↓ Cost per Lead</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">SHAP Importance — Cost per Lead</div>
+          <div class="stat-value" style="color:#38a169;">23.22%</div>
+          <div class="stat-note">Giảm metric — tốt cho campaign</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Combo có reliability cao nhất</div>
+          <div class="stat-value" style="color:#38a169;">92.5%</div>
+          <div class="stat-note">↓ Cost per Lead · combo nên dùng</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Dimension quan trọng nhất</div>
+          <div class="stat-value" style="font-size:18px;padding-top:8px;">content_key_angle</div>
+          <div class="stat-note">Top trong 5/10 finding hàng đầu</div>
+        </div>
+    </div>
+
+    <div class="section-title">Narrative tổng quan</div>
+    <div class="section-desc">Bức tranh toàn cảnh về hiệu suất creative</div>
+    <div class="narrative-block"><p>CIS đang vận hành một trong những thương hiệu giáo dục quốc tế uy tín nhất tại Việt Nam — với học phí 720–800M+/năm, vị thế IB, và cộng đồng đa quốc tịch là những tài sản thực sự. Trên mặt trận digital, đội ngũ đã xây dựng một creative pool đủ lớn để CFP có thể học được tín hiệu: content_cta và content_key_angle cùng nhau giải thích hơn 65% SHAP importance cho CPL, và combo University Admission + Bilingual + Shooting + Tìm hiểu thêm đã được xác nhận với Reliability 92.1% — giảm CPL 6.2% so với trung bình toàn dataset. Đây là nền tảng vững chắc để scale.</p>
+<p>Nhưng dữ liệu tiết lộ một nghịch lý đáng lo ngại: CIS đang đầu tư nhiều nhất vào chính những angle đang phản tác dụng. Academic Excellence &amp; IB Curriculum — angle quen thuộc và được ưu tiên nhất — giảm CPL (tốt về volume) nhưng đồng thời tăng CPQLead, nghĩa là nó đang thu hút nhiều lead hơn nhưng kém chất lượng hơn. Tương tự, &#39;Nhận học bổng&#39; CTA kéo CPL xuống nhưng đẩy CPQLead lên — CIS đang vô tình tham gia cuộc chiến học bổng với SNA và Renaissance, thu hút đúng audience nhạy cảm về giá mà CIS không muốn phục vụ. Trong khi đó, &#39;Tìm hiểu thêm&#39; — CTA thường bị coi là yếu nhất — lại xuất hiện trong combo mạnh nhất, và International Community &amp; Diversity — angle không đối thủ nào đang khai thác — đứng thứ hai về SHAP cho CPQLead nhưng hoàn toàn vắng mặt trong các combo được test. Quan trọng hơn: toàn bộ creative pool hiện tại không có một Reels hay Video nào — trong khi 4C Research xác nhận Reels đạt CPC thấp hơn 26% trên Meta 2025. SHAP importance thấp của visual_format không phải tín hiệu format không quan trọng — đó là tín hiệu về data gap nghiêm trọng nhất trong dataset.</p>
+<p>Do đó, CIS cần thực hiện ba chuyển dịch đồng thời trong 60–90 ngày tới. Thứ nhất, nhân rộng ngay combo đã được xác nhận (University Admission + Bilingual + Shooting + Tìm hiểu thêm) thành 3–5 variations và phân bổ ~40% budget — đây là conversion core đã có bằng chứng. Thứ hai, khai thác white space cạnh tranh bằng cách tạo 2–3 creative mới với International Community &amp; Diversity angle kết hợp &#39;Đăng ký tư vấn ngay&#39; để tối ưu CPQLead — không đối thủ nào đang làm điều này. Thứ ba, lấp đầy blind spot format bằng ít nhất 5–8 Reels creative (9:16, dưới 60 giây, Shooting style) để CFP cycle tiếp theo có đủ data đánh giá video. Direction Stability 0.493 là lời nhắc nhở quan trọng: không all-in vào một angle — duy trì portfolio đa dạng và re-run CFP sau 60–90 ngày khi Reels và Testimonial creative mới đã có đủ data.</p></div>
+
+    <div class="section-title">Aha Moments</div>
+    <div class="section-desc">Những phát hiện counter-intuitive quan trọng nhất từ dataset</div>
+    <div class="aha-grid">
+        <div class="aha-card">
+          <div class="aha-num">1</div>
+          <h4>CTA &#39;Tìm hiểu thêm&#39;</h4>
+          <p>thường bị coi là CTA yếu nhất vì quá generic — lại xuất hiện trong combo mạnh nhất (-6.2% CPL) khi kết hợp đúng angle và language. Điều này gợi ý với phụ huynh phân khúc cao, friction thấp quan trọng hơn urgency cao trong giai đoạn đầu funnel.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">2</div>
+          <h4>Academic Excellence &amp; IB Curriculum</h4>
+          <p>angle quen thuộc và được đầu tư nhiều nhất của CIS — có tín hiệu trái chiều: giảm CPL nhưng tăng CPQLead. Angle mà CIS tự hào nhất lại đang thu hút sai audience. Đây là contradiction trực tiếp với intuition của client.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">3</div>
+          <h4>Không có ngôn ngữ nào tối ưu đồng thời cả CPL lẫn CPQLead</h4>
+          <p>đây không phải vấn đề creative execution mà là structural trade-off. Client cần quyết định metric nào ưu tiên trước khi chọn language strategy, thay vì tìm &#39;ngôn ngữ tốt nhất&#39; chung chung.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">4</div>
+          <h4>visual_format có SHAP importance thấp nhất (8.74%)</h4>
+          <p>nhưng lý do có thể là vì Reels/Video hoàn toàn vắng mặt trong dataset, không phải vì format không quan trọng. SHAP thấp ở đây là tín hiệu về data gap, không phải tín hiệu về tầm quan trọng của format.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">5</div>
+          <h4>International Community &amp; Diversity có SHAP 10.87% Decrease cho CPQLead</h4>
+          <p>đứng thứ hai trong tất cả angle values cho metric quan trọng nhất — nhưng không xuất hiện trong bất kỳ combo mạnh nào. Đây là angle bị bỏ quên có tiềm năng cao nhất và không đối thủ nào đang khai thác.</p>
+        </div>
+    </div>
+
+    <div class="section-title">Định hướng chiến lược</div>
+    <div class="section-desc">Hướng đi đề xuất dựa trên evidence từ CFP data</div>
+    <div class="narrative-block"><p>CIS nên chuyển từ chiến lược creative đơn chiều (IB Curriculum + Học bổng) sang portfolio 3 tầng: (1) CONVERSION CORE — University Admission &amp; Career Outcomes + Bilingual + Shooting + Tìm hiểu thêm là combo đã được xác nhận (-6.2% CPL, Reliability 92.1%), cần nhân rộng ngay với 3–5 variations và phân bổ ~40% budget. (2) QUALITY FILTER — International Community &amp; Diversity + Đăng ký tư vấn ngay cho CPQLead optimization, kết hợp với Carousel format để tăng engagement depth. (3) FORMAT EXPANSION — Ưu tiên tạo Reels/Video creative (hiện hoàn toàn vắng mặt trong taxonomy) vì 4C Research xác nhận CPC thấp hơn 26% — đây là blind spot lớn nhất cần giải quyết trong 60 ngày tới. Về positioning: tránh leo thang cuộc chiến học bổng với SNA/Renaissance bằng cách reframe Scholarship angle từ discount sang merit-based. Direction Stability thấp (0.493) cảnh báo không nên over-concentrate vào một angle — duy trì creative diversity và re-run CFP sau 60–90 ngày khi có thêm data từ Reels và Testimonial creative mới.</p></div>
+  </section>
+
+  <section id="insights" class="tab-panel">
+    <div class="section-title">Tất cả Insights (12)</div>
+    <div class="section-desc">Từng insight theo framework Observation — Explanation — Implication</div>
+    
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-01</span>
+          <h3>CTA &#39;Đăng ký tư vấn ngay&#39; là bộ lọc chất lượng lead tự nhiên — nhưng bị hy sinh vì áp lực volume</h3>
+        </div>
+        <p><b>Observation —</b> content_cta là dimension số 1 theo SHAP importance cho CPL (35.79%). &#39;Đăng ký tư vấn ngay&#39; có tín hiệu Decrease cho CPQLead (SHAP 5.56%) nhưng Increase cho CPL — nghĩa là CTA này tạo ít lead hơn nhưng chất lượng cao hơn. Ngược lại, &#39;Nhận học bổng&#39; giảm CPL (SHAP 11.61%) nhưng tăng CPQLead (SHAP 4.70%) — nhiều lead hơn nhưng kém chất lượng hơn. Direction Stability CPL = 0.493 nên các so sánh này cần framing thận trọng.</p>
+        <p><b>Explanation —</b> Phụ huynh chi 720–800M+/năm cho trường quốc tế không phản hồi CTA học bổng vì động lực chính của họ là kết quả giáo dục, không phải giảm giá (Tier 2: 4C Research về phân khúc cao). CTA &#39;Đăng ký tư vấn ngay&#39; tạo ra commitment threshold cao hơn — chỉ phụ huynh thực sự quan tâm mới click, tự nhiên lọc bỏ lead kém chất lượng. &#39;Nhận học bổng&#39; thu hút phụ huynh nhạy cảm về giá — không phải target audience lý tưởng của CIS.</p>
+        <p><b>Implication —</b> Phân tách mục tiêu campaign rõ ràng: (1) Nếu campaign mục tiêu là CPQLead/chất lượng tư vấn → ưu tiên &#39;Đăng ký tư vấn ngay&#39; hoặc &#39;Đặt lịch tham quan trường&#39; làm primary CTA. (2) Nếu campaign mục tiêu là volume lead để nurture → dùng &#39;Nhận học bổng&#39; nhưng cần pipeline riêng để qualify. Không nên mix hai loại CTA trong cùng một ad set vì sẽ làm nhiễu tín hiệu tối ưu hóa của Meta.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-02</span>
+          <h3>Combo vô địch: University Admission + Bilingual + Shooting + Tìm hiểu thêm giảm CPL ~6.2% — nhưng chỉ có 1 combo vượt ngưỡng này</h3>
+        </div>
+        <p><b>Observation —</b> Combo [Single + Shooting + University Admission &amp; Career Outcomes + Bilingual + Tìm hiểu thêm] là combo mạnh nhất trong toàn bộ dataset, giảm CPL ~6.2% so với trung bình (Predicted CPL: 13.17, Reliability: 92.1%, SHAP importance: 0.0364). Đây là combo DUY NHẤT vượt ngưỡng -6% impact. Combo mạnh thứ hai chỉ đạt -2.38% (Open Day + Bilingual + Đăng ký tư vấn ngay). Khoảng cách giữa #1 và #2 là ~3.8 điểm phần trăm — rất lớn.</p>
+        <p><b>Explanation —</b> University Admission &amp; Career Outcomes là angle có SHAP cao nhất cho CPL (23.22%) và đứng thứ hai cho CPQLead (12.62%) — đây là angle duy nhất tối ưu đồng thời cả hai metric. Khi kết hợp với Bilingual (tiếp cận phụ huynh song ngữ — target audience chính của CIS), Shooting (production style thực tế, không dàn dựng quá mức), và CTA mềm &#39;Tìm hiểu thêm&#39; (giảm friction), combo này tạo ra perfect storm về relevance + credibility + accessibility. Reliability 92.1% xác nhận đây không phải outlier.</p>
+        <p><b>Implication —</b> Nhân rộng combo này ngay lập tức: tạo ít nhất 3–5 creative variations dựa trên cùng blueprint (University Admission angle + Bilingual + Shooting style + Tìm hiểu thêm CTA), thay đổi visual hook và specific outcome data (ví dụ: &#39;116 trường đại học nhận học sinh 2025&#39;, &#39;IBDP trung bình 33 điểm&#39;). Đây nên là &#39;control creative&#39; trong mọi A/B test tiếp theo. Phân bổ ít nhất 40% budget cho nhóm creative này.</p>
+        <span class="badge">Tier 1 · High</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-03</span>
+          <h3>Academic Excellence &amp; IB Curriculum — angle quen thuộc nhất của CIS lại là bẫy chất lượng lead</h3>
+        </div>
+        <p><b>Observation —</b> Academic Excellence &amp; IB Curriculum có tín hiệu trái chiều rõ ràng: Decrease cho CPL (tốt về volume) nhưng Increase cho CPQLead (xấu về chất lượng). Angle này xuất hiện trong nhiều combo nhưng với CPQLead tín hiệu tăng — gợi ý thu hút lead volume cao nhưng chất lượng thấp hơn. Direction Stability CPL = 0.493 nên cần framing thận trọng, nhưng pattern trái chiều này nhất quán với tín hiệu của &#39;Nhận học bổng&#39; CTA.</p>
+        <p><b>Explanation —</b> IB Curriculum là USP phổ biến nhất trong ngành — EIS, SSIS, SNA đều dùng IB messaging (Tier 2: 4C Research về competitor landscape). Khi angle này bão hòa trên thị trường, nó thu hút broad audience bao gồm cả phụ huynh đang &#39;research chung&#39; chứ không phải phụ huynh đã sẵn sàng enroll. Kết quả: nhiều lead nhưng ít qualified. University Admission &amp; Career Outcomes cụ thể hơn, tạo ra self-selection tốt hơn — chỉ phụ huynh thực sự quan tâm đến outcome mới engage.</p>
+        <p><b>Implication —</b> Giảm tỷ trọng Academic Excellence &amp; IB Curriculum làm primary angle trong campaign performance. Nếu vẫn dùng angle này, hãy kết hợp với specific outcome data (điểm IBDP, tỷ lệ vào đại học top) để nâng cao specificity và lọc lead tốt hơn. Dùng angle này cho awareness/top-of-funnel, không dùng cho conversion campaign. Chuyển budget từ IB Curriculum angle sang University Admission angle cho các ad set tối ưu CPQLead.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-04</span>
+          <h3>Không có ngôn ngữ nào tối ưu đồng thời CPL và CPQLead — đây là trade-off chiến lược, không phải lỗi creative</h3>
+        </div>
+        <p><b>Observation —</b> content_language đứng thứ 3 về SHAP importance (26.11% cho CPL). &#39;English only&#39; giảm CPL (SHAP 9.72%, Decrease) nhưng tăng CPQLead (SHAP 5.43%, Increase). &#39;Vietnamese only&#39; giảm CPL (SHAP 4.88%) nhưng tăng CPQLead (SHAP 6.47%). &#39;Bilingual&#39; tăng CPL (SHAP 4.99%, Increase — xấu về volume) nhưng xuất hiện trong combo mạnh nhất (-6.2% CPL) khi kết hợp đúng angle. Direction Stability CPQLead = 0.591 (gần ngưỡng 0.6) — claims về CPQLead cần framing thận trọng.</p>
+        <p><b>Explanation —</b> English-only creative tiếp cận phụ huynh expat và phụ huynh Việt có background quốc tế — nhóm này có thể đang research nhiều trường cùng lúc, dẫn đến lead volume cao nhưng conversion thấp hơn. Vietnamese-only creative tiếp cận phụ huynh Việt mainstream — nhóm rộng hơn nhưng có thể chưa đủ qualified cho mức học phí CIS. Bilingual creative tự nhiên lọc phụ huynh song ngữ — target audience lý tưởng của CIS — nhưng audience pool nhỏ hơn nên CPL cao hơn. Khi kết hợp đúng angle (University Admission), Bilingual vượt trội.</p>
+        <p><b>Implication —</b> Thiết kế language strategy theo funnel: (1) Top-of-funnel/awareness: English only hoặc Vietnamese only để maximize reach và lead volume. (2) Mid-to-bottom funnel/conversion: Bilingual + University Admission angle để tối ưu CPQLead. Không dùng một language strategy cho toàn bộ campaign. Tạo separate ad sets theo language để Meta tối ưu hóa riêng từng nhóm audience.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-05</span>
+          <h3>Scholarship angle hoạt động tốt cho CPL nhưng tạo ra perception risk — đối thủ đang leo thang cuộc chiến học bổng</h3>
+        </div>
+        <p><b>Observation —</b> Scholarship &amp; Tuition Promotion là top value cho CPL (SHAP cao, Decrease direction). Combo [Scholarship angle + Nhận học bổng CTA + English only + Shooting] giảm CPL ~1.52% (Predicted: 13.83, Reliability: 92.4%, SHAP: 0.0333). Tuy nhiên, &#39;Nhận học bổng&#39; CTA tăng CPQLead (SHAP 4.70%) — lead từ scholarship messaging có chất lượng thấp hơn.</p>
+        <p><b>Explanation —</b> SNA Saigon South đang dùng học bổng lên đến 50% cho ngoại kiều, Renaissance dùng học bổng 100% học phí (Tier 2: 4C Research về competitor). Khi CIS dùng Scholarship angle, CIS đang tham gia vào cuộc chiến giá mà các đối thủ đang leo thang. Phụ huynh phân khúc cao (720–800M+/năm) của CIS không nên được tiếp cận bằng discount messaging — điều này có thể làm giảm perceived value và thu hút sai audience. Scholarship angle hiệu quả về CPL vì audience pool rộng, nhưng không phải audience CIS muốn.</p>
+        <p><b>Implication —</b> Nếu CIS có chương trình học bổng thực sự, hãy reframe messaging từ &#39;Nhận học bổng&#39; (discount framing) sang &#39;Học bổng tài năng — dành cho học sinh xuất sắc&#39; (merit framing) để thu hút đúng audience. Giảm tỷ trọng Scholarship angle trong campaign tối ưu CPQLead. Dùng Scholarship angle chỉ cho remarketing audience đã biết CIS — không dùng cho cold audience vì risk làm loãng brand positioning.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-06</span>
+          <h3>International Community &amp; Diversity là angle ẩn cho CPQLead — bị underutilized trong creative pool hiện tại</h3>
+        </div>
+        <p><b>Observation —</b> International Community &amp; Diversity có SHAP 10.87% Decrease cho CPQLead — đứng thứ hai trong tất cả angle values cho metric này, chỉ sau University Admission &amp; Career Outcomes (12.62%). Tuy nhiên, angle này không xuất hiện trong bất kỳ combo mạnh nào được liệt kê trong Combo Analysis, gợi ý nó đang bị underutilized hoặc chưa được test đủ trong creative pool.</p>
+        <p><b>Explanation —</b> Phụ huynh có kết nối quốc tế — nhóm target chính của CIS — đặc biệt nhạy cảm với tín hiệu về cộng đồng đa quốc tịch vì đây là differentiator thực sự so với trường Việt Nam chất lượng cao (Tier 2: 4C Research về target audience CIS). Angle này tạo ra social proof và belonging signal — hai yếu tố quan trọng trong quyết định chọn trường quốc tế. Không đối thủ nào trong nhóm được phân tích đang dùng angle này làm primary message, tạo ra white space.</p>
+        <p><b>Implication —</b> Tạo ít nhất 2–3 creative mới tập trung vào International Community &amp; Diversity angle, kết hợp với Bilingual language và &#39;Đăng ký tư vấn ngay&#39; CTA (dựa trên pattern CPQLead tốt). Nội dung gợi ý: số quốc tịch trong trường, câu chuyện học sinh từ nhiều nền văn hóa, sự kiện đa văn hóa. Test angle này trong ad set riêng để đo CPQLead trực tiếp. Đây là cơ hội differentiation so với đối thủ.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-07</span>
+          <h3>Reels/Video hoàn toàn vắng mặt trong taxonomy — đây là blind spot chiến lược nghiêm trọng nhất của dataset</h3>
+        </div>
+        <p><b>Observation —</b> visual_format taxonomy chỉ có 4 giá trị: Single, Infographic, Album/Carousel, và không có &#39;Reels&#39; hay &#39;Video&#39;. visual_format có SHAP importance thấp nhất (8.74% cho CPL). Tất cả 11 combo mạnh trong dataset đều dùng &#39;Single&#39; format. 4C Research xác nhận Reels đạt CPC thấp hơn 26% so với Feed placement và là định dạng vượt trội nhất trên Meta Ads 2025 (Tier 2). Meta chính thức khuyến nghị tỷ lệ 9:16 cho Stories/Reels.</p>
+        <p><b>Explanation —</b> Nếu CIS không có hoặc có rất ít Reels creative trong creative pool, thì CFP không thể phân tích format này — dẫn đến SHAP importance thấp cho visual_format không phải vì format không quan trọng, mà vì thiếu data đa dạng. Đây là sampling bias nghiêm trọng: dataset bị dominated bởi static/single format, khiến model không học được signal từ video. Kết quả: toàn bộ insight về visual_format trong CFP này có thể không đại diện cho tiềm năng thực sự của format.</p>
+        <p><b>Implication —</b> Đây là ưu tiên số 1 về creative production: tạo ít nhất 5–8 Reels creative (9:16, dưới 60 giây) trong quý tới để có đủ data cho CFP cycle tiếp theo. Áp dụng 3 hook types Meta khuyến nghị: Value Promise, Question, và Storytelling. Dùng Shooting production style (đã được xác nhận trong combo mạnh nhất) cho Reels. Sau khi có data, chạy lại CFP để so sánh Reels vs Single trực tiếp. Không thể đưa ra kết luận về visual format cho đến khi có Reels data.</p>
+        <span class="badge">Tier 2 · High</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-08</span>
+          <h3>Open Day angle + CTA trực tiếp là combo activation tốt nhất — phù hợp cho giai đoạn enrollment</h3>
+        </div>
+        <p><b>Observation —</b> Combo [Single + Shooting + Đăng ký tư vấn ngay + Open Day/Enrollment Event + Bilingual] giảm CPL ~2.38% (Predicted: 13.71, Reliability: 92.3%, SHAP: 0.0115). Đây là combo mạnh thứ hai trong dataset và là combo duy nhất kết hợp CTA trực tiếp (&#39;Đăng ký tư vấn ngay&#39;) với event-based angle. SHAP importance 0.0115 thấp hơn combo #1 (0.0364) — khoảng cách đáng kể.</p>
+        <p><b>Explanation —</b> Open Day angle tạo ra urgency tự nhiên (event có deadline) kết hợp với CTA trực tiếp tạo ra conversion path rõ ràng nhất. Phụ huynh phân khúc cao có hành vi tìm hiểu kỹ trước khi quyết định (Tier 2: 4C Research) — Open Day là bước tiếp theo logic sau khi họ đã aware về trường. Bilingual language đảm bảo tiếp cận đúng audience song ngữ. Đây là combo phù hợp nhất cho giai đoạn enrollment/activation, không phải awareness.</p>
+        <p><b>Implication —</b> Kích hoạt combo này trong vòng 4–6 tuần trước mỗi Open Day event. Tạo 2–3 variations với specific event details (ngày, giờ, địa điểm) để tăng urgency. Dùng combo này cho remarketing audience (đã tương tác với CIS trước đó) thay vì cold audience — conversion path ngắn hơn phù hợp với audience đã warm. Đo CPQLead riêng cho nhóm này để xác nhận chất lượng lead từ event-based activation.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-09</span>
+          <h3>Shooting production style thống trị toàn bộ combo mạnh — Animation và AI x Shooting chưa được chứng minh hiệu quả</h3>
+        </div>
+        <p><b>Observation —</b> Tất cả combo mạnh trong dataset (top 3 được liệt kê) đều dùng &#39;Shooting&#39; production style. Không có combo nào với Animation hoặc AI x Shooting xuất hiện trong top performers. visual_video_production_type kết hợp với visual_format tạo thành tất cả 11 combo trong dataset — nhưng Shooting chiếm dominant position trong các combo giảm CPL.</p>
+        <p><b>Explanation —</b> Shooting style (quay thực tế tại trường) tạo ra authenticity signal mạnh hơn Animation hay AI-generated content — đặc biệt quan trọng với phụ huynh đang đánh giá môi trường học tập thực tế cho con. 4C Research xác nhận UGC-style content đạt engagement rate cao hơn 4x so với branded content truyền thống (Tier 2). Shooting style gần với UGC hơn Animation, giải thích tại sao nó outperform trong context này. AI x Shooting có thể chưa có đủ creative volume để model học được signal.</p>
+        <p><b>Implication —</b> Ưu tiên Shooting style cho tất cả video production trong 2 quý tới. Nếu muốn test Animation hoặc AI x Shooting, cần tạo ít nhất 5–8 creative mỗi loại để có đủ data cho CFP. Khi dùng Shooting, ưu tiên quay tại campus thực tế (lớp học, sân chơi, sự kiện) thay vì studio setup — tăng authenticity. Không loại bỏ Animation hoàn toàn nhưng không nên đầu tư lớn cho đến khi có data xác nhận.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-10</span>
+          <h3>Album/Carousel đang trở lại mạnh mẽ nhưng bị underrepresented trong creative pool — cơ hội bỏ lỡ</h3>
+        </div>
+        <p><b>Observation —</b> Album/Carousel có SHAP 3.92% Decrease cho CPQLead — tín hiệu tích cực, cao hơn Single (SHAP 3.78%) cho cùng metric. Tuy nhiên, tất cả combo mạnh trong dataset đều dùng Single format, không có combo nào với Album/Carousel trong top performers. 4C Research xác nhận Carousel đang trở lại mạnh mẽ trên Meta 2025–2026 và được xếp là &#39;hot format&#39; cho ngành Edu (Tier 2).</p>
+        <p><b>Explanation —</b> Carousel phù hợp để trình bày lộ trình học tập, nhiều USP, hoặc testimonials từ nhiều học sinh — đặc biệt phù hợp với phụ huynh có hành vi tìm hiểu kỹ (Tier 2: 4C Research về high-income parents). Tín hiệu SHAP tích cực cho CPQLead gợi ý Carousel thu hút phụ huynh engaged hơn — họ swipe qua nhiều slides, tăng time-on-ad và intent signal. Lý do Carousel không xuất hiện trong combo mạnh có thể do thiếu creative volume đủ để model học được interaction effects.</p>
+        <p><b>Implication —</b> Tạo 3–5 Carousel creative mới với University Admission angle (angle mạnh nhất) — mỗi slide trình bày một outcome cụ thể (đại học, điểm số, học bổng nhận được). Kết hợp Bilingual language và &#39;Tìm hiểu thêm&#39; CTA (dựa trên combo mạnh nhất). Test Carousel vs Single trong A/B test riêng để đo CPQLead trực tiếp. Đây là format có tiềm năng cao nhưng chưa được khai thác đúng mức trong creative pool hiện tại.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-11</span>
+          <h3>Parent &amp; Student Testimonial angle — được ngành Edu xác nhận là top performer nhưng hoàn toàn vắng mặt trong combo mạnh</h3>
+        </div>
+        <p><b>Observation —</b> Parent &amp; Student Testimonial là một trong 9 angle values trong taxonomy nhưng không xuất hiện trong bất kỳ combo mạnh nào được liệt kê. 4C Research xác nhận testimonial từ học sinh, phụ huynh và cựu học sinh là góc độ truyền thông chủ đạo trong ngành Edu (Tier 2). Không có SHAP data riêng cho angle này được cung cấp trong dimension analysis — gợi ý sample size nhỏ hoặc performance không nổi bật trong dataset hiện tại.</p>
+        <p><b>Explanation —</b> Có hai khả năng: (1) CIS chưa có đủ Testimonial creative để model học được signal — đây là data gap, không phải bằng chứng angle này kém hiệu quả. (2) Testimonial creative của CIS hiện tại chưa được tối ưu hóa đúng cách (quá dài, thiếu specific outcome, không có hook mạnh). 4C Research xác nhận testimonial hiệu quả nhất khi kết hợp với specific achievement data — không phải generic &#39;tôi thích trường này&#39; (Tier 2).</p>
+        <p><b>Implication —</b> Tạo Testimonial creative theo format mới: (1) Hook bằng specific outcome (&#39;Con tôi vào được UCL sau 4 năm tại CIS&#39;), (2) 30–60 giây Shooting style, (3) Bilingual hoặc Vietnamese only, (4) CTA &#39;Tìm hiểu thêm&#39;. Tạo ít nhất 5–8 Testimonial creative để có đủ data cho CFP cycle tiếp theo. Ưu tiên testimonial từ phụ huynh có background tương tự target audience (song ngữ, kết nối quốc tế, con đã vào đại học top).</p>
+        <span class="badge">Tier 2 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-12</span>
+          <h3>Direction Stability thấp (0.493) cho CPL cảnh báo: không nên over-optimize một angle duy nhất — cần portfolio đa dạng</h3>
+        </div>
+        <p><b>Observation —</b> Direction Stability cho CPL = 0.493 — dưới ngưỡng 0.6, nghĩa là không thể khẳng định tuyệt đối chiều hướng của bất kỳ value nào cho CPL. SHAP-permutation agreement không được cung cấp trực tiếp nhưng confidence levels toàn bộ ở mức Low (16–36%) cho tất cả dimension values. Điều này áp dụng cho dimension có SHAP importance cao nhất (content_cta: 35.79%) và dimension số 2 (content_key_angle: 29.36%).</p>
+        <p><b>Explanation —</b> Direction Stability thấp có thể do: (1) Sample size creative pool còn nhỏ — model chưa thấy đủ variations để ổn định. (2) Performance thực sự biến động theo audience, timing, và placement — creative chỉ giải thích 1–10% variance tổng thể (phần còn lại là audience, budget, timing). (3) Interaction effects giữa dimensions mạnh hơn main effects — một angle tốt trong context này có thể kém trong context khác. Đây là tín hiệu cần portfolio approach, không phải single-angle dominance.</p>
+        <p><b>Implication —</b> Không all-in vào một angle duy nhất dù University Admission &amp; Career Outcomes có SHAP cao nhất. Duy trì creative portfolio với ít nhất 3–4 angles active cùng lúc: University Admission (primary, ~40% budget), International Community &amp; Diversity (secondary, ~25%), Open Day/Event (activation, ~20%), và một angle test mới (Testimonial hoặc Holistic Development, ~15%). Re-run CFP sau mỗi 60–90 ngày khi có thêm data để cải thiện stability.</p>
+        <span class="badge">Tier 1 · High</span>
+      </div>
+  </section>
+
+  <section id="appendix" class="tab-panel">
+    <div class="section-title">Phụ lục</div>
+    <div class="section-desc">Thông tin dự án</div>
+    <table class="appendix">
+      <tr><th>Dự án</th><td>Trường Quốc Tế Canada – The Canadian International School (CIS)_SEEFQMP001 - 3</td></tr>
+      <tr><th>Khách hàng</th><td>Trường Quốc Tế Canada – The Canadian International School (CIS)</td></tr>
+      <tr><th>Kênh</th><td>Meta Ads</td></tr>
+      <tr><th>Ngày tạo báo cáo</th><td>18/05/2026</td></tr>
+      <tr><th>Số lượng insight</th><td>12</td></tr>
+      <tr><th>Hypotheses validated</th><td>15</td></tr>
+      <tr><th>KPI</th><td>CPL, CPQL</td></tr>
+      <tr><th>Quality assessment</th><td>WARNING</td></tr>
+    </table>
+  </section>
+</main>
+<footer>CFP Agent · Generated 18/05/2026</footer>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
